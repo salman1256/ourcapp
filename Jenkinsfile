@@ -22,14 +22,7 @@ pipeline {
             }
         }
 
-        stage('Test') {
-            steps {
-                script {
-                    // Run tests using Docker Compose
-                    //bat 'docker-compose run app dotnet test /app/MyConsoleApp.Tests/MyConsoleApp.Tests.csproj'
-                }
-            }
-        }
+       
 
         stage('Run') {
             steps {
