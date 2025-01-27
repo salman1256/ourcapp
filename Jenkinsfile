@@ -17,7 +17,7 @@ pipeline {
             steps {
                 script {
                     // Build the Docker image
-                    bat 'docker-compose build'
+                    docker 'docker-compose build'
                 }
             }
         }
@@ -28,7 +28,7 @@ pipeline {
             steps {
                 script {
                     // Run the application
-                    bat 'docker-compose up -d'
+                    docker 'docker-compose up -d'
                 }
             }
         }
@@ -37,7 +37,7 @@ pipeline {
     post {
         always {
             // Clean up Docker containers and images
-            bat 'docker-compose down'
+            docker 'docker-compose down'
         }
     }
 }
